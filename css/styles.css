@@ -38,8 +38,8 @@
     .container-fluid {
         padding: 0;
     }
-
-    .main-page-content{
+    
+    .main-page-content {
         visibility: hidden;
     }
     
@@ -54,8 +54,8 @@
         /*background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.0) 100%);*/
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
-
-    #navbar{
+    
+    #navbar {
         visibility: hidden;
     }
     
@@ -275,7 +275,7 @@
         display: inline;
         margin-bottom: 20px;
         padding: 5px;
-        padding-left:10px;
+        padding-left: 10px;
         padding-right: 10px;
     }
     
@@ -426,16 +426,12 @@
         bottom: 0;
         margin: 0;
         padding-top: 60px;
-        padding-bottom:30px;
-        padding-right:10px;
-        display: inline-block;
+        padding-bottom: 30px;
+        padding-right: 10px;
+        display: none;
         position: fixed;
         z-index: 10;
         background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    #howToUseApp{
-        display: none;
     }
     
     .howToUseApp h3 {
@@ -446,16 +442,16 @@
     .howToUseApp .col-xs-6 .col-sm-4 img {
         position: relative;
     }
-
-    #alert{
+    
+    #alert {
         visibility: hidden;
     }
-
-    #target{
+    
+    #target {
         visibility: hidden;
     }
-
-    #yourEvent{
+    
+    #yourEvent {
         visibility: hidden;
     }
     
@@ -498,28 +494,28 @@
     
     .btn-primary {
         color: #fff;
-        background-color:rgba(233, 70, 74, 1);
-        border:none;
+        background-color: rgba(233, 70, 74, 1);
+        border: none;
     }
-
-    .btn-primary:hover{
+    
+    .btn-primary:hover {
         color: #fff;
-        background-color:rgba(233, 70, 74, 0.5);
-        border:none;
+        background-color: rgba(233, 70, 74, 0.5);
+        border: none;
     }
-
+    
     .termsOfUse {
-        width:90%;
-        height:auto;
+        width: 90%;
+        height: auto;
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        padding:20px;
-        padding-top:80px;
-        line-height:17px;
+        padding: 20px;
+        padding-top: 80px;
+        line-height: 17px;
         text-align: center;
     }
-
+    
     @media only screen and (max-width: 400px) {
         #iPhone {}
     }

@@ -334,18 +334,20 @@
 
         // why doesn't fadeIn work?!?!
         $("#App").click(function() {
-            $("#howToUseApp").fadeIn("slow", function() {
+            $(".howToUseApp").fadeIn("400", function() {
                 console.log(this);
                 $(this).css('visibility', 'visible');
+                $(this).css('display', 'inline-block');
 
             });
 
         });
 
         $(".howToUseApp").click(function() {
-            console.log(this);
-            $(this).fadeOut("slow", function(){
+            $(this).fadeOut("400", function(){
+                console.log(this);
                 $(this).css('visibility', 'hidden');
+                $(this).css('display', 'none');
             });
         });
 
