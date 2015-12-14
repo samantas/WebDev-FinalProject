@@ -86,16 +86,18 @@
                 <img id="App" src="img/PHOMO-wh.gif" />
             </div>
             <!-- when users click on iPhone gif, trigger more images -->
-            <div class="howToUseApp">
+            <div class="howToUseApp" id="howToUseApp">
                 <div class="col-xs-6 col-sm-4">
                     <img src="img/inApp-InviteGuests.png" id="alert" />
                     <img src="img/inApp-InviteGuests-noAlert.png" id="noAlert">
                 </div>
                 <div class="col-xs-6 col-sm-4">
-                    <img src="img/inApp-PaymentOptions.png" />
+                    <img src="img/inApp-PaymentOptions.png" id="target" />
+                    <img src="img/inApp-Payment-NoTarget.png" id="noTarget">
                 </div>
                 <div class="col-xs-6 col-sm-4">
-                    <img src="img/inApp-ReviewEvent.png" />
+                    <img src="img/inApp-ReviewEvent.png" id="reviewEvent" />
+                    <img src="img/inApp-YourEvent.png" id="yourEvent">
                 </div>
                 <h3>
                     Discover more about how to use our app!
@@ -204,7 +206,7 @@
                         <p>
                             Thanks for visiting our website! We are currently a team of three, working hard to create the next best social event hosting app. If you want to know more about us, see the links below.
                             <br>
-                            <br><strong> Founder: </strong><a href="#">Philipp Guertler</a>
+                            <br><strong> Co-Founder: </strong><a href="#">Philipp Guertler</a>
                             <br><strong> Co-founder: </strong><a href="#">Trevor Rudolph</a>
                             <br><strong> UI and UX Designer: </strong><a href="#">Samanta Shi</a>
                         </p>
@@ -303,14 +305,14 @@
     <script type="text/javascript">
     $(document).ready(function() {
 
-        // run test on initial page load
         checkSize();
 
-        // run test on resize of the window
         $(window).resize(checkSize);
 
         $("#alert").hide();
+        $("#target").hide();
         $("#comingSoon").hide();
+        $("#yourEvent").hide();
 
         $(window).scroll(function() {
             var scrollTop = $(window).scrollTop();
@@ -330,15 +332,21 @@
 
         });
 
-        // when user clicks the iPhone gif, display div with in app images
+        // why doesn't fadeIn work?!?!
         $("#App").click(function() {
-            //do something when user clicks on iPhone gif
-            $(".howToUseApp").show();
-            $(".howToUseApp").css('visibility', 'visible');
+            $("#howToUseApp").fadeIn("slow", function() {
+                console.log(this);
+                $(this).css('visibility', 'visible');
+
+            });
+
         });
 
         $(".howToUseApp").click(function() {
-            $(this).hide();
+            console.log(this);
+            $(this).fadeOut("slow", function(){
+                $(this).css('visibility', 'hidden');
+            });
         });
 
         $('.container-fluid').scroll(function() {
@@ -350,12 +358,40 @@
             e.preventDefault();
             $('#noAlert').hide();
             $('#alert').show();
+            $('#alert').css('visibility', 'visible');
         });
 
         $('#alert').mouseout(function(e) {
             e.preventDefault();
             $('#alert').hide();
+            $('#alert').css('visibility', 'hidden');
             $('#noAlert').show();
+        });
+
+        $('#noTarget').mouseover(function(e) {
+            e.preventDefault();
+            $('#noTarget').hide();
+            $('#target').show();
+            $('#target').css('visibility', 'visible');
+        });
+
+        $('#target').mouseout(function(e) {
+            e.preventDefault();
+            $('#target').hide();
+            $('#noTarget').show();
+        });
+
+        $('#reviewEvent').mouseover(function(e) {
+            e.preventDefault();
+            $('#reviewEvent').hide();
+            $('#yourEvent').show();
+            $('#yourEvent').css('visibility', 'visible');
+        });
+
+        $('#yourEvent').mouseout(function(e) {
+            e.preventDefault();
+            $('#yourEvent').hide();
+            $('#reviewEvent').show();
         });
 
         // enable the form
